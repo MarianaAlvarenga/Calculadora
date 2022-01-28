@@ -23,8 +23,10 @@ function mainFunction(){
     var num2            = 0;
     var operation       = "";
     var resultado       = "";
+    var ans             = "";
     var impossible      = "You can't divide by zero, champion ;)";
     var del          = document.getElementById("del");
+    var answer          = document.getElementById("answer");
     var numeros = ['casa', 'perro'];
 
     //Events
@@ -163,6 +165,8 @@ function mainFunction(){
                 break;
         }
         display.textContent = resultado;
+        ans = resultado;
+        resultado = "";
         operation = "";
         num1 = 0;
         num2 = 0;  
@@ -172,5 +176,10 @@ function mainFunction(){
         display2.textContent = "";
         num1 = 0;
         num2 = 0;
+    }
+
+    answer.onclick = function() {
+        display.textContent = ans;
+        resultado = "";
     }
 }
